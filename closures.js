@@ -146,10 +146,12 @@ function motivation(firstname, lastname) {
   var welcomeText = 'You\'re doing awesome, keep it up ';
 
   // code message function here.
-
+  function message() {
+    return welcomeText + firstname + ' ' + lastname + '.';
+  }
 
   //Uncommment this to return the value of your invoked message function
-  //return message();
+  return message();
 
 }
 
@@ -188,9 +190,14 @@ var module = (function() {
   // outside our lexical scope
   return {
     // Code here.
+    publicMethod: function() {
+      return privateMethod();
+    }
   };
 
 })();
+
+module.publicMethod();
 
 
 
